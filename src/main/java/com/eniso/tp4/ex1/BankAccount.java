@@ -9,5 +9,25 @@ package com.eniso.tp4.ex1;
  * @author Hatto
  */
 public class BankAccount {
-    
+protected Integer accountNumber;
+protected Double balance;
+
+public BankAccount (Integer accountNumber, Double balance) {
+this.accountNumber = accountNumber;
+this.balance = balance;
+}
+public void deposit (double amount) {
+balance += amount;
+}
+public void withdraw (double amount) {
+if (amount <= balance) {
+balance -= amount;
+} else {
+System.out.println("Solde insuffisant.");
+}
+}
+
+public Double getBalance () {
+return balance;
+}
 }
